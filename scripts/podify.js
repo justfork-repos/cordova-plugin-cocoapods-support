@@ -231,7 +231,7 @@ module.exports = function (context) {
             if (!podified || !_.isEqual(newPods, currentPods)) {
                 log("Installing pods");
                 log("Sit back and relax this could take a while.");
-                var podInstall = spawn('pod', ['install'], {
+                var podInstall = spawn('pod', ['install', '--repo-update'], {
                     cwd: 'platforms/ios'
                 });
                 podInstall.stdout.on('data', function (data) {
